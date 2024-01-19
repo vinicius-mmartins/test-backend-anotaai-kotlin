@@ -61,3 +61,10 @@ We will assess the following aspects of your solution:
 - Documentation quality.
 - Code organization, module separation, readability, and comments.
 - Commit history.
+
+### Notes
+
+- I didn't use dtos to make impl simpler. My focus is not the impl, its to study terraform, containers and noSql. 
+And I used kotlin as a challenge, to study another lang.
+
+- Pra conectar no MongoDb utilizei dbeaver conectado ao container local.

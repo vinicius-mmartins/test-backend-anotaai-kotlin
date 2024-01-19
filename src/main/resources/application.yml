@@ -1,0 +1,11 @@
+
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      host: localhost
+      port: 27017
+      database: catalog-api
+      username: vini
+      password: vini22k0
+      uri: mongodb://localhost:27017/catalog-api
