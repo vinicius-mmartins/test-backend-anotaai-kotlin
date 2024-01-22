@@ -27,4 +27,6 @@ class CategoryService(
         return categoryRepo.findById(category.id).orElseThrow()
     }
 
+    fun getAllByOwnerId(ownerId: String): List<Category> = categoryRepo.findAllByOwnerId(ownerId)
+
 }

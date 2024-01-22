@@ -3,6 +3,7 @@ package com.github.viniciusmartins.catalogapi.service
 import com.github.viniciusmartins.catalogapi.model.document.Product
 import com.github.viniciusmartins.catalogapi.repository.ProductRepo
 import org.springframework.stereotype.Service
+import java.util.*
 
 @Service
 class ProductService(
@@ -13,16 +14,19 @@ class ProductService(
     fun getAll(): List<Product> = productRepo.findAll()
 
     fun update(product: Product): Product {
-        getById(product)
+        getById(product.id)
         return productRepo.save(product)
     }
 
     fun delete(product: Product) {
-        getById(product)
+        getById(product.id)
         productRepo.delete(product)
     }
 
-    private fun getById(product: Product): Product {
-        return productRepo.findById(product.id).orElseThrow()
+    fun getById(id: UUID): Product {
+        return productRepo.findById(id).orElseThrow()
     }
+
+    fun getByCategory(categoryId: String): List<Product> = productRepo.findAllByCategoryId(categoryId)
+
 }

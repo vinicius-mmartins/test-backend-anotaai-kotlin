@@ -8,4 +8,3 @@ spring:
       database: catalog-api
       username: vini
       password: vini22k0
-      uri: mongodb://localhost:27017/catalog-api

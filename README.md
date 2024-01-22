@@ -1,5 +1,10 @@
+# Desafio Back-End AnotaAi
 
-<h1>Backend Analyst Candidate Test</h1>
+To usando o desafio como estudo.
+
+Segue o texto do desafio.
+
+### Backend Analyst Candidate Test
 Dear developer,
 
 Welcome to the Backend Analyst Candidate Test. This test aims to assess your general knowledge and development speed. Below, you will find the details and requirements for this test.
@@ -62,9 +67,22 @@ We will assess the following aspects of your solution:
 - Code organization, module separation, readability, and comments.
 - Commit history.
 
-### Notes
+## Notes
 
 - I didn't use dtos to make impl simpler. My focus is not the impl, its to study terraform, containers and noSql. 
 And I used kotlin as a challenge, to study another lang.
 
 - Pra conectar no MongoDb utilizei dbeaver conectado ao container local.
+
+## Run APP
+
+Comandos
+
+```
+docker compose up -d                 
+docker exec -it test-backend-anotaai-kotlin-mongo-1 bash
+mongosh mongodb://localhost:27017 -u vini -p vini22k0
+show dbs;
+use catalog-api;
+db.product.find()
+```
