@@ -20,8 +20,8 @@ resource "aws_s3_bucket" "catalog-bucket" {
   force_destroy = true
 }
 
-resource "aws_sqs_queue" "catalog-emit-queue" {
-  name = "catalog-queue"
+resource "aws_sqs_queue" "catalog-queue" {
+  name = "catalog-emit-queue"
   max_message_size          = 2048
   message_retention_seconds = 180
   tags = {

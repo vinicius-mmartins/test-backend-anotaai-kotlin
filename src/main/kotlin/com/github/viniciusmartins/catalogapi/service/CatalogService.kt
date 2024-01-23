@@ -17,7 +17,9 @@ class CatalogService(
 
     fun getById(ownerId: String): Catalog = TODO("service que busca no s3")
 
-    private fun buildCatalog(ownerId: String): Catalog {
+    fun put(catalog: Catalog): Nothing = TODO("func q publica catalogo no s3")
+
+    fun buildCatalog(ownerId: String): Catalog {
         val owner = ownerService.getById(UUID.fromString(ownerId))
         val categoryList = categoryService.getAllByOwnerId(ownerId)
         val catalogItems = mutableListOf<CatalogItems>()

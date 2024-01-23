@@ -8,3 +8,10 @@ spring:
       database: catalog-api
       username: vini
       password: vini22k0
+
+aws:
+  sqs:
+    catalog-queue: queueName
+    catalog-queue-url: url
+  bucket:
+    name: bucketName

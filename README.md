@@ -89,3 +89,44 @@ show dbs;
 use catalog-api;
 db.product.find()
 ```
+
+## Cadastros
+
+owner
+```
+{
+    "id":"caafbf41-0a8e-48b3-b064-35d764c9699e" 
+    "name":"Tia Nena"
+}
+```
+
+category
+```
+{
+    "id":"abd3e329-1903-4cf6-83d0-364f241a209e"
+    "title":"Quitanda",
+    "description":"Quitandinhas da Tia Nena",
+    "ownerId":"caafbf41-0a8e-48b3-b064-35d764c9699e"
+}
+```
+
+produtos:
+```
+{
+    "id":"1a3b385b-3038-4664-9bde-1b658117440b",
+    "ownerId":"caafbf41-0a8e-48b3-b064-35d764c9699e",
+    "title":"Broa da Tia Nena",
+    "price":"40R$/kg",
+    "description":"Broa de fubá. Melhor da cidade!",
+    "categoryId":"abd3e329-1903-4cf6-83d0-364f241a209e"
+}
+
+{
+    "id":"8503c08c-157a-43b0-ac53-2942d3069a24",
+    "ownerId":"caafbf41-0a8e-48b3-b064-35d764c9699e",
+    "title":"Pão de Queijo Mineiro da Tia Nena",
+    "price":"35R$/kg",
+    "description":"Pão de queijo. Melhor da cidade!",
+    "categoryId":"abd3e329-1903-4cf6-83d0-364f241a209e"
+}
+```
