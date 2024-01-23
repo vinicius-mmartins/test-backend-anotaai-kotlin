@@ -74,6 +74,9 @@ And I used kotlin as a challenge, to study another lang.
 
 - Pra conectar no MongoDb utilizei dbeaver conectado ao container local.
 
+- No desafio ta errado a nomeclatura, pede sqs e chama de topico, vou publicar direto no sqs pra provisionar menos infra na aws
+e chamar a fila de catalog-emit-queue.
+
 ## Run APP
 
 Comandos
