@@ -34,15 +34,13 @@ class S3Service(
 
     fun getJson(bucket: String, key: String): String {
         try {
-            val responseInputStream = s3Client.getObject(
+            val responseInputStream = s3Client.getObjectAsBytes(
                 GetObjectRequest.builder()
                     .bucket(bucket)
                     .key(key)
                     .build()
             )
-            responseInputStream.response() //todo: debugar
-            return ""
-//            return Json.decodeFromString<Catalog>() //todo: como pegar a resposta do bucket?
+            return responseInputStream.asUtf8String()  //todo: debugar
         } catch (e: NoSuchKeyException) {
             log.info { "not found" }
             throw RuntimeException("criar exception e tratar")
