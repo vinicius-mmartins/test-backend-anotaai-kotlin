@@ -130,3 +130,11 @@ produtos:
     "categoryId":"abd3e329-1903-4cf6-83d0-364f241a209e"
 }
 ```
+
+## Duvidas sobre a regra
+
+Nao vou inventar e impl a regra mas fica o questionamento.
+
+- O que acontece caso delete uma categoria? Desativa os produtos? Deixa sem? Atualiza pra vazio na coluna de catalogoId?
+Somente produtos com categoria entram no catalogo?
+Nota: Se deletar categoria vai acabar ficando fora do catalogo pois busco todas categorias pra um owner.

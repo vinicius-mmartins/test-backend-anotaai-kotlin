@@ -5,6 +5,9 @@ import com.github.viniciusmartins.catalogapi.model.document.Product
 import com.github.viniciusmartins.catalogapi.model.dto.Catalog
 import com.github.viniciusmartins.catalogapi.model.dto.CatalogItems
 import com.github.viniciusmartins.catalogapi.model.dto.Item
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import java.util.*
 
@@ -12,12 +15,17 @@ import java.util.*
 class CatalogService(
         private val ownerService: OwnerService,
         private val categoryService: CategoryService,
-        private val productService: ProductService
+        private val productService: ProductService,
+        private val s3Service: S3Service,
+        @Value("\${aws.bucket.name}") private val bucket: String
 ) {
 
-    fun getById(ownerId: String): Catalog = TODO("service que busca no s3")
+    fun getById(ownerId: String): String = s3Service.getJson(bucket, ownerId)
 
-    fun put(catalog: Catalog): Nothing = TODO("func q publica catalogo no s3")
+    fun uploadToBucket(ownerId: String, catalog: Catalog) {
+        val catalogJson = Json.encodeToString(catalog)
+        s3Service.uploadJson(bucket, ownerId, catalogJson)
+    }
 
     fun buildCatalog(ownerId: String): Catalog {
         val owner = ownerService.getById(UUID.fromString(ownerId))

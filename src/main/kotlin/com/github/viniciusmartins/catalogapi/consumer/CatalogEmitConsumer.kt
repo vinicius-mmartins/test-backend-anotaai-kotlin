@@ -19,7 +19,7 @@ class CatalogEmitConsumer(
         log.info { "Consumindo mensagem: $message" }
         val emitMsg = Json.decodeFromString<CatalogEmitMsg>(message)
         val catalog = catalogService.buildCatalog(emitMsg.ownerId)
-        //todo: publicar catalogo no s3. caso exista modificar ou reescrever?
+        catalogService.uploadToBucket(emitMsg.ownerId, catalog)
     }
 
 }
